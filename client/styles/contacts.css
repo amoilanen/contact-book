@@ -1,0 +1,110 @@
+body {
+  color: #222;
+  font-family: "Comic Sans MS";
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: absolute;
+  padding: 8px;
+}
+
+input {
+    padding-left: 16px;
+}
+
+/* Button and its states */
+.button {
+    color: #888;
+    cursor: default;
+}
+
+div:hover.button {
+    color: #222;
+}
+
+div:active.button {
+    transform: translate(1px, 1px);
+}
+
+/* Styling the main window */
+.remove-button {
+    width: 16px;
+    height: 16px;
+}
+
+.contacts-container {
+    display: inline-block;
+    position: relative;
+    width: 240px;
+    height: 100%;
+}
+
+.contacts-searchbox {
+    margin-bottom: 16px;
+    width: 180px;
+}
+
+.store-contacts-button,
+.add-contact-button {
+    float: right;
+    font-size: large;
+    margin-right: 8px;
+    margin-top: 4px;
+}
+
+.contacts-list {
+    overflow: auto;
+    position: absolute;
+    top: 32px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.contact-short-info {
+    cursor: pointer;
+    padding: 8px;
+}
+
+.contact-short-info .remove-button {
+    float: right;
+}
+
+div:hover.contact-short-info {
+    background-color: #EEE;
+}
+
+div.contact-short-info.selected {
+    background-color: #AAA;
+}
+
+.contact-details {
+    display: inline-block;
+    margin-left: 16px;
+    border: 1px solid #CCC;
+    border-radius: 8px;
+    position: absolute;
+    left: 256px;
+    right: 16px;
+    bottom: 16px;
+    top: 16px;
+}
+
+.contact-details .button {
+    float: right;
+    margin-right: 8px;
+    margin-top: 16px;
+}
+
+.contact-details .remove-button {
+    margin-right: 16px;
+}
+
+.contact-details input,
+.contact-details label {
+    display: block;
+    width: 270px;
+    margin-left: 16px;
+    margin-top: 8px;
+}

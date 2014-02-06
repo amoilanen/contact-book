@@ -1,0 +1,63 @@
+<!doctype html>
+<html ng-app="ContactsBook" ng-controller="ContactsController">
+  <head>
+    <title>Contacts Book</title>
+    <link rel="stylesheet" href="client/lib/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="client/lib/bootstrap/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" href="client/styles/contacts.css" />
+<!--
+    <script src="client/lib/angular.min.js"></script>
+    <script src="client/lib/angular-animate.min.js"></script>
+    <script src="client/lib/angular-resource.min.js"></script>
+    <script src="client/lib/angular-route.min.js"></script>
+-->
+    <script src="client/lib/angularjs/angular.js"></script>
+    <script src="client/lib/angularjs/angular-animate.js"></script>
+    <script src="client/lib/angularjs/angular-resource.js"></script>
+    <script src="client/lib/angularjs/angular-route.js"></script>
+    <script src="client/src/contacts.js"></script>
+    <script src="client/src/localstorage.js"></script>
+    <!--<script src="client/src/serverstorage.js"></script>-->
+  </head>
+  <body>
+      <div class="contacts-container">
+          <input class="contacts-searchbox" ng-model="searchTerm" placeholder="Type search term" />
+          <div 
+               ng-click="storeContacts()"
+               class="store-contacts-button button glyphicon glyphicon-cloud-upload"></div>
+          <div 
+               ng-click="addContact()"
+               class="add-contact-button button glyphicon glyphicon-plus"></div>
+          <div class="contacts-list">
+              <div 
+                   class="contact-short-info" 
+                   ng-class="{selected: (contact.id == selectedContact.id)}"
+                   ng-click="selectContact(contact)"
+                   ng-repeat="contact in filteredContacts">
+                  {{contact.lastName}}, {{contact.firstName}}
+                  <div 
+                       ng-click="removeContact(contact)"
+                       class="remove-button button glyphicon glyphicon-remove"></div>
+              </div>
+          </div>
+      </div>
+      <div class="contact-details">
+          <div class="contact-properties" ng-if="selectedContact != null">
+              <div
+                   ng-click="removeContact(selectedContact)"
+                   class="remove-button button glyphicon glyphicon-remove"></div>
+              <div
+                   ng-click="clearSelection()"
+                   class="stop-viewing-button button glyphicon glyphicon-eye-close"></div>
+              <label for="firstName">First name</label>
+              <input name="firstName" ng-model="selectedContact.firstName" />
+              <label for="lastName">Last name</label>
+              <input name="lastName" ng-model="selectedContact.lastName" />
+              <label for="phone">Phone</label>
+              <input name="phone" ng-model="selectedContact.phone" />
+              <label for="email">E-mail</label>
+              <input name="email" ng-model="selectedContact.eMail" />
+          </div>
+      </div>
+  </body>
+</html>

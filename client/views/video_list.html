@@ -1,0 +1,19 @@
+<h1>Game Videos</h1>
+<div class="filter-container">
+  <span class="filter-label">Filter:</span>
+  <select class="filter-select" ng-model="gameId">
+    <option class="filter-option" value="-1">All games</option>
+    <option class="filter-option" ng-repeat="game in games" value="{{game.id}}">{{game.name}}</option>
+  </select>
+</div>
+<div>
+  <div class="video-preview" ng-repeat="video in videos">
+    <img ng-click="openDetails(video)" class="preview-thumbnail" src="{{video.preview_thumbnail}}" />
+    <div class="preview-details">
+      <div class="preview-title">"{{video.title}}"</div>
+      <div class="preview-owner">
+        <a href="http://www.everyplay.com/{{video.user.username}}">{{video.user.username}}</a>
+      </div>
+    </div>
+  </div>
+</div>

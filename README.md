@@ -1,4 +1,4 @@
-contact-book
+Contact Book
 ============
 
 Contact book application
