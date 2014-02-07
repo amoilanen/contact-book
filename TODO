@@ -2,5 +2,6 @@
 - The built client and server versions should be minified and redistributable so that
 it is easy to deploy them
 - Test the application with mobile devices (iPad/Safari, Android/Chrome, etc.), adapt the CSS styles if needed
+- Add (optional: can be switched on and off) support for multiple users: require login and password when accessing the contact book to get the personalized data
 - Add the social networking information, in the contact details include links to the external profiles
 - Add home site, the details has two modes: basic information and advanced with more fields
