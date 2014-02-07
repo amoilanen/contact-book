@@ -25,6 +25,10 @@ Activate the 'x' button next to the contact or in the contact details panel.
 
 Activate a contact, it will become highlighted in the list of contacts and the contact details panel will be shown.
 
+#### Closing contact details
+
+Activate the eye-close icon on the contact details panel, the panel will be hidden.
+
 #### Changing a contact
 
 Open the contact details panel by selecting the contact in the list of contacts and edit the contact details. The changes will be automatically saved locally without any extra actions.
@@ -63,6 +67,20 @@ Run the server in `server/src` with `node server.local.storage.js`. The server w
 Install Node.js [node-js][node-js] if you do not yet have it on your machine, run `npm install` in the root of the project to install the needed dependencies.
 
 Run the server in `server/src` with `node server.js`. The server will store the contacts to the disk when asked in `contacts.nedb`. The server will serve the application at `http://localhost:8000`.
+
+In `index.html` substitute the local storage version of the service providing contacts with the server storage one. Change
+
+```
+    <script src="client/src/localstorage.js"></script>
+    <!--<script src="client/src/serverstorage.js"></script>-->
+```
+
+to
+
+```
+    <!--<script src="client/src/localstorage.js"></script>-->
+    <script src="client/src/serverstorage.js"></script>
+```
 
 ## Setting Up Development Environment
 

@@ -50,7 +50,11 @@ app.controller('ContactsController', ['$scope', 'ContactService', function($scop
             };
         });
 
-        ContactService.storeAll(contactsToStore);
+        ContactService.storeAll(contactsToStore, {
+            error: function(data) {
+                console.error("Cannot store list of contacts", data);
+            }
+        });
     };
 
     $scope.addContact = function() {
@@ -93,6 +97,9 @@ app.controller('ContactsController', ['$scope', 'ContactService', function($scop
     ContactService.getAll({
         success: function(contacts) {
             $scope.contacts = contacts;
+        },
+        error: function(data) {
+            console.error("Cannot get list of contacts", data);
         }
     });
 }]);
